@@ -10,7 +10,7 @@
     <h1>Blog</h1>
 
 
-{% for p in posts %}
+{% for p in post_list %}
     <hr/>
     <h2><a href = "{{ p.get_absolute_url }}">{{ p.title }}</a></h2>
     <!-- <a href = "{{ p.get_abssolute_url }}">{{ p.title }}</a> 이것을 통해 /blog/에서 제목을 눌러 다음 페이지로 이동할 수 있다.-->
