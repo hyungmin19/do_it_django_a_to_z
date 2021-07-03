@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Blog</h1>
+
+
+{% for p in posts %}
+    <hr/>
+    <h2>{{ p.title }}</h2>
+    <h4>{{ p.created_at }}</h4>
+    <p>{{ p.content }}</p>
+    <!--<h3>{{ p }}</h3>   이거 p 앞 뒤로 공백 잘 맞춰서 해야한다--> 
+{% endfor %}
+
+<!-- 이거 13이랑 15입력한뒤 엔터치면 { } 가 사라지는데 왜 그러는거지? 왜 사라지면 안되는거고 안사라지면 정확하게 구동되는 거지?-->
+<!-- 13, 14, 15 이거 왜 쓰는거고 뭔뜻임?-->
+</body>
+</html>
