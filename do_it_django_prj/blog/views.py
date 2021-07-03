@@ -1,14 +1,20 @@
-from django.shortcuts import render
-from django.views.generic import ListView # FBV가 아닌 CBV로 포스트 목록 페이지 만들 때 
+# from django.shortcuts import render # CBV로 쓰는 거 때문에 주석처리
+from django.views.generic import ListView, DetailView # FBV가 아닌 CBV로 포스트 목록 페이지 만들 때 
+# 여러 레코드 목록 형태 보여줄 때는 ListView를 이용했다면, 한 레코드를 자세히 보여줄 때는 DetailView를 이용한다.
+
 from .models import Post
 
 # CBV방식 : Listview를 사용할 것이고 model은 Post다.
 class PostList(ListView):
-    model = Post
+    model = Post  #Listview를 사용할 것이고 model은 Post다.
     ordering = '-pk'
 
     # template_name = 'blog/index.html'
     # 템플릿명을 인식하지 않으면 post_list.html을 템플릿으로 인식하기 때문에 윗줄 코드를 주석처리
+
+class PostDetail(DetailView):
+    model = Post #Listview를 사용할 것이고 model은 Post다.
+
 
 # 밑에는 FBV로 짜는 것
 # def index(request):  
