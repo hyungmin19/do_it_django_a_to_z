@@ -14,12 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.urls.conf import include
+from django.urls import path, include
+# from django.urls.conf import include
 
 urlpatterns = [
-    path('blog/', include('blog.urls')), # 이거를 작성하고 blog앱 폴더에서 urls.py를 만든다.
-    path('admin/', admin.site.urls),
+    path('blog/', include('blog.urls')), # 이거를 작성하고 blog앱 폴더에서 urls.py를 만든다. blog url 만들기
+    path('admin/', admin.site.urls),  #blog admin 관리자 만들기
+    path('', include('single_pages.urls')), #''를 한 이유는 대문 페이지는 도메인 뒤에 아무것도 붙이지 않았을 때 나타나는 페이지기 때문!
 ]
 
 
