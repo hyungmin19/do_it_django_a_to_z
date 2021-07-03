@@ -20,3 +20,11 @@ class Post(models.Model):
     def __str__(self):
         return f'[{self.pk}]{self.title}'
         # pk란 각 레코드에 대한 고유값이다.
+
+        # Q. 뭔가 20~22 코드 이거 때문에 게시글에서 history 버튼이 생긴거 같은데... history 버튼이 어디있을까?
+        # 주석처리하고 실행된 결과 history 버튼은 안없어졌다 default로 생성되는 거 같음
+    
+    def get_absolute_url(self):
+        return f'/blog/{self.pk}/' # -> 이 코드에 의미
+    # 일단 27~28번 코드로 인해 view on site 버튼이 history 옆에 생긴 것 같다.
+    # 27~28번 코드로 인해 포스트 목록 페이지에서 자동으로 포스트 상세페이지로 넘어갈 수 있는 주소를 설정해준다.
