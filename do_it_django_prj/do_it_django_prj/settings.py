@@ -37,7 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
+    'single_pages',
 ]
+
+# 새로 만든 blog와 single_pages를 앱에 등록해야 python manage.py makemigrations했을 때 No changes detected가 안뜬다.
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -105,13 +109,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
+# TIME_ZONE = 'UTC' 이거는 세계인을 위한 웹사이트를 만들때 표준이 되는 시각 , USE_TZ = True이다.
+# TIME_ZONE = 'Asia/Seoul'이렇게 하면 서울을 기준으로 시각 작성, USE_TZ = False이다.
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
