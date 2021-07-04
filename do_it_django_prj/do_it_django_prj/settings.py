@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os # 이미지 업로드를 위한 imagefield 때문
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -127,5 +128,10 @@ STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR), '_media'
+# MEDIA_URL은 media로 지정
+# 이미지 파일은 프로젝트 폴더 아래 _media라는 이름의 폴더를 만들고 그 안에 저장하도록 함.
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
